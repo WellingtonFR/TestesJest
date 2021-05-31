@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "nodemon src/server.js --ignore __tests__",
     "start": "node src/server.js",
-    "pretest": "set NODE_ENV=test && sequelize db:migrate",
+    "pretest": "set NODE_ENV=test&&sequelize db:create&&sequelize db:migrate",
     "test": "set NODE_ENV=test&&jest",
-    "postTest": "set NODE_ENV=test && sequelize db:migrate:undo:all"
+    "postTest": "set NODE_ENV=test&&sequelize db:migrate:undo:all"
   },
   "author": "",
   "license": "ISC",
